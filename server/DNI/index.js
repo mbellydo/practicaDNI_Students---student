@@ -47,4 +47,10 @@ module.exports = class DNI {
 
         return (regexp.test(dni) && (letraDni == ultimaLetraDniPasado));
     }
+
+    esDniCriminal() {
+        return stolenDNI.some(dni => {
+            return dni == this.numero
+        })
+    }
 }
